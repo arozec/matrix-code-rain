@@ -25,7 +25,7 @@ from io import StringIO
 from time import time, sleep
 
 class Screen:
-        """the class that handle display and drop management"""
+	"""the class that handle display and drop management"""
 	def __init__(self,
 			fps = 24, # number of frames per second
 			dropDensity = 0.07, # how many new drops will appear each second (arbitrary value)
@@ -56,7 +56,7 @@ class Screen:
 				self.pixels[x].append(False)
 
 	def __repr__(self):
-                """rendering function"""
+		"""rendering function"""
 		output = StringIO() # file like container to efficiently append white spaces or character to the render output depending on the status of the pixel
 		for i in range(self.height):
 			for j in range(self.width):
@@ -70,19 +70,19 @@ class Screen:
 		return output.getvalue()
 
 	def clearPixels(self):
-                """reset pixels function"""
+		"""reset pixels function"""
 		for x in range(self.width):
 			for y in range(self.height):
 				self.pixels[x][y] = False
 
 	def newDrops(self):
-                """drop creation at each frame"""
+		"""drop creation at each frame"""
 		for x in range(self.width):
 			if random() < self.dropDensity:
 				self.createDrop(x)
 
 	def update(self):
-                """creates a new frame and delete drops that are at the bottom of the screen"""
+		"""creates a new frame and delete drops that are at the bottom of the screen"""
 		toBeDeleted = []
 		for i, drop in enumerate(self.dropList):
 			drop.update()
@@ -96,7 +96,7 @@ class Screen:
 			del self.dropList[j - i]
 
 	def createDrop(self, x):
-                """creates a drop with random attributes"""
+		"""creates a drop with random attributes"""
 		if random() < self.chanceDropNotOnTop:
 			y = randrange(*self.dropHeightRangePop)
 		else:
@@ -106,13 +106,13 @@ class Screen:
 		self.dropList.append(CodeDrop(x, y, self.height, speed, persistence))
 
 	def wait(self, start):
-                """waits for the appropriate amount of time between each frame"""
+		"""waits for the appropriate amount of time between each frame"""
 		passedTime = time() - start
 		if passedTime < self.frameDuration:
 			sleep(self.frameDuration - passedTime)
 
 	def run(self):
-                """main function, makes the program run forever"""
+		"""main function, makes the program run forever"""
 		while True:
 			start = time()
 			self.clearPixels()
