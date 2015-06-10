@@ -24,7 +24,7 @@ def getArgs():
         parser.add_argument('-d', '--density', nargs = '?', type = float, help= 'a decimal number representing how frequently drops will appear on the screen (arbitrary value, base value 0.07)')
         parser.add_argument('-s', '--speed', nargs = 2, type = float, help = 'two decimal or integers decribing the range of possible speeds for the drops to fall at (values expressed in lines per second, base values: 15 35)')
         parser.add_argument('-p', '--persistence', nargs = 2, type = float, help = 'two decimal or integers decribing the range of possible duration that the drop can pour before falling down the screen (values expressed in seconds, base values: 0.5 5)')
-        parser.add_argument('-n', '--notontop', nargs = '?', type =  float, help = 'a decimal number describing the chance for a drop not to appear on top of the screen, base value: 0.33 meaning 33% chance')
+        parser.add_argument('-n', '--notontop', nargs = '?', type =  float, help = 'a decimal number describing the chance for a drop not to appear on top of the screen, base value: 0.33 meaning 33%% chance')
         parser.add_argument('-m', '--middlerange',  nargs = 2, type =  float, help = 'two decimal or integers decribing the proportion of the screen in which the drops that will not appear on top of the screen will appear in (base value: 0.25 0.75, meaning between 1/4 and 3/4 of the screen)')
 
         args = parser.parse_args()

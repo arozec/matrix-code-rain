@@ -5,6 +5,3 @@ Every cosmetic attributes are customizable through command line options, except 
 To use, invoque matrix_code_rain.py in a terminal.
 If you experience stuttering, try decreasing the number of frames per second with the -f option.
 
-### known bugs
-
-on mac os x and python 3.4.3, the argument parser can not display the help (not tested on other OS).
