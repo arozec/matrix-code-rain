@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 # matrix code rain
 # Copyright (C) 2015  Antoine Rozec
 
